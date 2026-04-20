@@ -1,13 +1,32 @@
 {
-  "id": "org.jwad.premium",
-  "version": "1.1.0",
   "name": "jwad Premium Links",
-  "description": "مستودع جواد الخاص - روابط CinemaOS, MoviePluto, EgyDead, RedFlix",
-  "resources": ["stream"],
-  "types": ["movie", "series", "anime"],
-  "idPrefixes": ["tt", "kitsu"],
-  "behaviorHints": {
-    "configurable": true,
-    "configurationRequired": false
-  }
+  "id": "org.jwad.premium",
+  "version": "1.2.0",
+  "description": "مستودع جواد الخاص - شامل للدراما التركية والآسيوية والأنمي",
+  "plugins": [
+    {
+      "name": "CinemaOS (البديل المباشر)",
+      "url": "https://githubusercontent.com"
+    },
+    {
+      "name": "Animesit (محتوى الأنمي)",
+      "url": "https://githubusercontent.com"
+    },
+    {
+      "name": "ArabSeed (عرب سيد)",
+      "url": "https://githubusercontent.com"
+    },
+    {
+      "name": "Akwam (أكوام)",
+      "url": "https://githubusercontent.com"
+    },
+    {
+      "name": "FaselHD (فاصل إعلاني)",
+      "url": "https://githubusercontent.com"
+    },
+    {
+      "name": "CimaNow (سيما ناو)",
+      "url": "https://githubusercontent.com"
+    }
+  ]
 }
