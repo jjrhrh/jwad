@@ -1,0 +1,9 @@
+{
+  "id": "org.jwad.premium",
+  "version": "1.0.0",
+  "name": "jwad Premium",
+  "description": "مستودع جواد لروابط الأفلام والمسلسلات والأنمي",
+  "resources": ["stream"],
+  "types": ["movie", "series", "anime"],
+  "idPrefixes": ["tt", "kitsu"]
+}
