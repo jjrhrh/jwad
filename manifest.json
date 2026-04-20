@@ -1,9 +1,13 @@
 {
   "id": "org.jwad.premium",
-  "version": "1.0.0",
-  "name": "jwad Premium",
-  "description": "مستودع جواد لروابط الأفلام والمسلسلات والأنمي",
+  "version": "1.1.0",
+  "name": "jwad Premium Links",
+  "description": "مستودع جواد الخاص - روابط CinemaOS, MoviePluto, EgyDead, RedFlix",
   "resources": ["stream"],
   "types": ["movie", "series", "anime"],
-  "idPrefixes": ["tt", "kitsu"]
+  "idPrefixes": ["tt", "kitsu"],
+  "behaviorHints": {
+    "configurable": true,
+    "configurationRequired": false
+  }
 }
