@@ -1,19 +1,34 @@
-{
-  "name": "jwad Premium Links",
-  "id": "org.jwad.premium",
-  "version": "1.2.1",
-  "description": "مستودع جواد الخاص - روابط CinemaOS والدراما الآسيوية",
-  "types": ["movie", "series", "anime"],
-  "resources": ["stream"],
-  "idPrefixes": ["tt", "kitsu"],
-  "plugins": [
-    {
-      "name": "CinemaOS",
-      "url": "https://githubusercontent.com"
-    },
-    {
-      "name": "Akwam",
-      "url": "https://githubusercontent.com"
-    }
-  ]
-}
+[
+  {
+    "id": "cinemaos-provider",
+    "name": "CinemaOS",
+    "description": "My private provider",
+    "version": "1.0.0",
+    "author": "jwad",
+    "supportedTypes": ["movie", "tv"],
+    "filename": "providers/cinemaos.js",
+    "enabled": true,
+    "logo": "",
+    "contentLanguage": ["ar"],
+    "formats": ["mp4", "m3u8", "mkv"],
+    "limited": false,
+    "disabledPlatforms": [],
+    "supportsExternalPlayer": true
+  },
+  {
+    "id": "animesit-provider",
+    "name": "AnimeSit",
+    "description": "My private anime provider",
+    "version": "1.0.0",
+    "author": "jwad",
+    "supportedTypes": ["movie", "tv"],
+    "filename": "providers/animesit.js",
+    "enabled": true,
+    "logo": "",
+    "contentLanguage": ["ar"],
+    "formats": ["mp4", "m3u8", "mkv"],
+    "limited": false,
+    "disabledPlatforms": [],
+    "supportsExternalPlayer": true
+  }
+]
