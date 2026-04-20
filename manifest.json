@@ -1,31 +1,18 @@
 {
   "name": "jwad Premium Links",
   "id": "org.jwad.premium",
-  "version": "1.2.0",
-  "description": "مستودع جواد الخاص - شامل للدراما التركية والآسيوية والأنمي",
+  "version": "1.2.1",
+  "description": "مستودع جواد الخاص - روابط CinemaOS والدراما الآسيوية",
+  "types": ["movie", "series", "anime"],
+  "resources": ["stream"],
+  "idPrefixes": ["tt", "kitsu"],
   "plugins": [
     {
-      "name": "CinemaOS (البديل المباشر)",
+      "name": "CinemaOS",
       "url": "https://githubusercontent.com"
     },
     {
-      "name": "Animesit (محتوى الأنمي)",
-      "url": "https://githubusercontent.com"
-    },
-    {
-      "name": "ArabSeed (عرب سيد)",
-      "url": "https://githubusercontent.com"
-    },
-    {
-      "name": "Akwam (أكوام)",
-      "url": "https://githubusercontent.com"
-    },
-    {
-      "name": "FaselHD (فاصل إعلاني)",
-      "url": "https://githubusercontent.com"
-    },
-    {
-      "name": "CimaNow (سيما ناو)",
+      "name": "Akwam",
       "url": "https://githubusercontent.com"
     }
   ]
