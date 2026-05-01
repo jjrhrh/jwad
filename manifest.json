@@ -5,7 +5,7 @@
   "resources": ["stream"],
   "types": ["movie", "series"],
   "catalogs": [],
-  "scrapers": [
+"providers": [ 
     {
       "id": "multiembed-provider",
       "name": "MultiEmbed",
