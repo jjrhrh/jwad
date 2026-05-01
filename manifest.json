@@ -2,6 +2,9 @@
   "id": "com.jwad.providers",
   "name": "Kabir Providers",
   "version": "1.0.0",
+  "resources": ["stream"],
+  "types": ["movie", "series"],
+  "catalogs": [],
   "scrapers": [
     {
       "id": "multiembed-provider",
