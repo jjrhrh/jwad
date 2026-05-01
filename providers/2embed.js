@@ -14,7 +14,7 @@ function getStreams(tmdbId, mediaType, season, episode) {
       "Referer": "https://www.2embed.cc/"
     },
     isM3U8: false,
-    supportsExternalPlayer: true
+    supportsExternalPlayer: false
   }]);
 }
 
