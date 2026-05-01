@@ -17,7 +17,7 @@ function getStreams(tmdbId, mediaType, season, episode) {
       quality: "Auto",
       headers: { "User-Agent": "Mozilla/5.0", "Referer": "https://embed.su/" },
       isM3U8: false,
-      supportsExternalPlayer: true
+      supportsExternalPlayer: false
     },
     {
       name: "EmbedAPI | VidBinge",
@@ -26,7 +26,7 @@ function getStreams(tmdbId, mediaType, season, episode) {
       quality: "Auto",
       headers: { "User-Agent": "Mozilla/5.0", "Referer": "https://vidbinge.dev/" },
       isM3U8: false,
-      supportsExternalPlayer: true
+      supportsExternalPlayer: false
     }
   ]);
 }
