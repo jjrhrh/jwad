@@ -1,1 +1,209 @@
+:root {
+    --neon-red: #ff1a3c;
+    --neon-red-soft: rgba(255, 26, 60, 0.55);
+    --neon-red-faint: rgba(255, 26, 60, 0.25);
+    --bg-black: #000000;
+    --bg-dark: #0a0a0a;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cairo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background-color: var(--bg-black);
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: var(--neon-red);
+    color: #ffffff;
+}
+
+.neon-text {
+    text-shadow:
+        0 0 6px var(--neon-red-soft),
+        0 0 14px var(--neon-red-soft),
+        0 0 28px var(--neon-red-faint);
+    transition: text-shadow 0.3s ease;
+}
+
+.neon-text:hover {
+    text-shadow:
+        0 0 8px var(--neon-red),
+        0 0 20px var(--neon-red),
+        0 0 40px var(--neon-red-soft);
+}
+
+.neon-box {
+    box-shadow:
+        0 0 8px var(--neon-red-faint),
+        0 0 20px var(--neon-red-faint),
+        inset 0 0 8px rgba(255, 26, 60, 0.08);
+    transition: box-shadow 0.3s ease, scale 0.3s ease, border-color 0.3s ease;
+}
+
+.neon-box:hover {
+    box-shadow:
+        0 0 12px var(--neon-red-soft),
+        0 0 30px var(--neon-red-soft),
+        inset 0 0 12px rgba(255, 26, 60, 0.15);
+}
+
+.neon-btn {
+    box-shadow:
+        0 0 10px var(--neon-red-soft),
+        0 0 24px var(--neon-red-faint);
+    transition: box-shadow 0.3s ease, scale 0.3s ease, background-color 0.3s ease;
+}
+
+.neon-btn:hover {
+    scale: 1.08;
+    box-shadow:
+        0 0 16px var(--neon-red),
+        0 0 36px var(--neon-red-soft),
+        0 0 60px var(--neon-red-faint);
+}
+
+.neon-btn:active {
+    scale: 0.97;
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--neon-red);
+    box-shadow: 0 0 8px var(--neon-red);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.movie-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.movie-card:hover {
+    box-shadow:
+        0 0 14px var(--neon-red-soft),
+        0 0 34px var(--neon-red-faint);
+}
+
+.server-btn {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, scale 0.3s ease;
+}
+
+.server-btn:hover {
+    scale: 1.05;
+}
+
+.server-btn.active {
+    background-color: var(--neon-red) !important;
+    color: #ffffff !important;
+    border-color: var(--neon-red) !important;
+    box-shadow:
+        0 0 12px var(--neon-red),
+        0 0 28px var(--neon-red-soft),
+        0 0 50px var(--neon-red-faint);
+}
+
+#player-modal.hidden {
+    display: none !important;
+}
+
+#player-modal:not(.hidden) {
+    display: block;
+    animation: modalFadeIn 0.35s ease-out forwards;
+}
+
+#player-modal:not(.hidden) > div > div {
+    animation: modalScaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalScaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+#search-dropdown {
+    animation: modalFadeIn 0.2s ease-out forwards;
+}
+
+#hero-image {
+    animation: heroFade 1.2s ease-out forwards;
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: scale(1.06);
+    }
+    to {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 10px;
+    border: 2px solid var(--bg-dark);
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--neon-red);
+    box-shadow: 0 0 10px var(--neon-red);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #2a2a2a var(--bg-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+  }
