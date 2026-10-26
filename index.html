@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سينما ريد | أفلام ومسلسلات</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white font-sans antialiased min-h-screen">
 
+    <header id="navbar" class="fixed top-0 inset-x-0 z-40 bg-gradient-to-b from-black via-black/80 to-transparent">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 md:px-8 py-4">
+            <a href="index.html" class="flex items-center gap-2 text-2xl md:text-3xl font-black text-red-600 neon-text">
+                <i class="fa-solid fa-clapperboard"></i>
+                <span>سينما ريد</span>
+            </a>
+
+            <ul class="hidden lg:flex items-center gap-8 font-semibold text-gray-300">
+                <li><a href="#home" class="nav-link text-red-500 hover:text-red-500 transition">الرئيسية</a></li>
+                <li><a href="#trending" class="nav-link hover:text-red-500 transition">أفلام</a></li>
+                <li><a href="#trending" class="nav-link hover:text-red-500 transition">مسلسلات</a></li>
+                <li><a href="#trending" class="nav-link hover:text-red-500 transition">الأكثر مشاهدة</a></li>
+                <li><a href="#trending" class="nav-link hover:text-red-500 transition">أضيف حديثاً</a></li>
+            </ul>
+
+            <div class="flex items-center gap-3 md:gap-4">
+                <form id="search-form" class="relative hidden sm:block">
+                    <input
+                        id="search-input"
+                        type="search"
+                        placeholder="ابحث عن فيلم أو مسلسل..."
+                        class="w-48 md:w-64 bg-zinc-900/80 border border-red-900/60 rounded-full py-2 pr-4 pl-10 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/40 transition"
+                    >
+                    <button type="submit" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-red-500 transition" aria-label="بحث">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <button id="mobile-search-btn" class="sm:hidden w-10 h-10 rounded-full bg-zinc-900 border border-red-900/60 text-gray-300 hover:text-red-500 transition" aria-label="بحث">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button id="profile-btn" class="w-10 h-10 rounded-full bg-zinc-900 border border-red-600 text-red-500 hover:bg-red-600 hover:text-white neon-box transition" aria-label="الحساب الشخصي">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="relative h-screen min-h-[600px] w-full overflow-hidden">
+            <img
+                id="hero-image"
+                src="https://picsum.photos/seed/cinemared/1920/1080"
+                alt="خلفية الفيلم المميز"
+                class="absolute inset-0 w-full h-full object-cover opacity-60"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-l from-black via-black/60 to-transparent"></div>
+
+            <div class="relative z-10 h-full max-w-7xl mx-auto px-4 md:px-8 flex flex-col justify-end pb-24 md:pb-32">
+                <span class="inline-flex w-fit items-center gap-2 bg-red-600/20 border border-red-600 text-red-500 text-sm font-bold rounded-full px-4 py-1 mb-4 neon-box">
+                    <i class="fa-solid fa-fire"></i>
+                    فيلم الأسبوع
+                </span>
+
+                <h1 id="hero-title" class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-4 neon-text">
+                    ظلال الفجر الأحمر
+                </h1>
+
+                <div class="flex flex-wrap items-center gap-4 text-sm md:text-base text-gray-300 mb-4">
+                    <span class="text-yellow-400 font-bold"><i class="fa-solid fa-star"></i> 8.7</span>
+                    <span>2026</span>
+                    <span class="border border-gray-500 rounded px-2 py-0.5 text-xs">+16</span>
+                    <span>2س 18د</span>
+                    <span>أكشن • إثارة • غموض</span>
+                </div>
+
+                <p id="hero-description" class="max-w-2xl text-gray-300 text-base md:text-lg leading-relaxed mb-8">
+                    في مدينة لا تنام، يكتشف محقق سابق خيوط مؤامرة غامضة تمتد إلى أعلى مستويات السلطة، وعليه أن يواجه ماضيه المظلم قبل أن يحل الفجر ويسدل الستار على الحقيقة إلى الأبد.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <button id="hero-watch-btn" class="flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white text-lg md:text-xl font-black rounded-full px-8 md:px-10 py-3 md:py-4 neon-btn transition transform hover:scale-105">
+                        <span>شاهد الآن</span>
+                        <span>🍿</span>
+                    </button>
+
+                    <button id="hero-fav-btn" class="flex items-center gap-3 bg-zinc-900/70 hover:bg-zinc-800 border border-red-600 text-white text-lg md:text-xl font-bold rounded-full px-8 md:px-10 py-3 md:py-4 backdrop-blur transition transform hover:scale-105">
+                        <i class="fa-regular fa-heart text-red-500"></i>
+                        <span>المفضلة</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="trending" class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="flex items-center gap-3 text-2xl md:text-3xl font-black">
+                    <span class="w-1.5 h-8 bg-red-600 rounded-full neon-box"></span>
+                    <span>الأفلام الرائجة</span>
+                    <i class="fa-solid fa-fire-flame-curved text-red-500"></i>
+                </h2>
+                <a href="#trending" class="text-sm md:text-base text-gray-400 hover:text-red-500 transition">
+                    عرض الكل
+                    <i class="fa-solid fa-chevron-left mr-1"></i>
+                </a>
+            </div>
+
+            <div id="movies-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6"></div>
+        </section>
+    </main>
+
+    <footer class="border-t border-red-900/40 bg-black py-8 text-center text-gray-500 text-sm">
+        <p class="mb-2 text-red-600 font-bold neon-text">سينما ريد</p>
+        <p>جميع الحقوق محفوظة &copy; 2026</p>
+    </footer>
+
+    <div id="player-modal" class="hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-sm overflow-y-auto">
+        <div class="relative min-h-full flex items-center justify-center p-4 md:p-8">
+            <div class="relative w-full max-w-5xl bg-zinc-950 border border-red-900/60 rounded-2xl neon-box overflow-hidden">
+
+                <button id="close-modal-btn" class="absolute top-3 left-3 z-20 w-11 h-11 rounded-full bg-red-600 hover:bg-red-700 text-white text-lg flex items-center justify-center neon-btn transition transform hover:rotate-90" aria-label="إغلاق النافذة">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="relative w-full aspect-video bg-black">
+                    <iframe
+                        id="player-iframe"
+                        src=""
+                        title="مشغل الفيديو"
+                        class="absolute inset-0 w-full h-full"
+                        allowfullscreen
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        referrerpolicy="no-referrer"
+                    ></iframe>
+                </div>
+
+                <div class="p-5 md:p-8">
+                    <div class="flex flex-wrap items-center gap-3 mb-6">
+                        <span class="text-gray-400 font-semibold">
+                            <i class="fa-solid fa-server text-red-500"></i>
+                            السيرفرات:
+                        </span>
+                        <button class="server-btn active bg-red-600 text-white font-bold rounded-full px-6 py-2 neon-btn transition" data-server="1">
+                            <i class="fa-solid fa-play ml-1"></i>
+                            سيرفر 1
+                        </button>
+                        <button class="server-btn bg-zinc-900 border border-red-900/60 text-gray-300 hover:bg-red-600 hover:text-white font-bold rounded-full px-6 py-2 transition" data-server="2">
+                            <i class="fa-solid fa-play ml-1"></i>
+                            سيرفر 2
+                        </button>
+                    </div>
+
+                    <div class="border-t border-red-900/40 pt-6">
+                        <h3 id="modal-title" class="text-2xl md:text-3xl font-black mb-3 text-red-500 neon-text">
+                            عنوان الفيلم
+                        </h3>
+                        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-4">
+                            <span id="modal-rating" class="text-yellow-400 font-bold"><i class="fa-solid fa-star"></i> --</span>
+                            <span id="modal-year">----</span>
+                            <span id="modal-genre">--</span>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">
+                            <i class="fa-solid fa-book-open text-red-500 ml-1"></i>
+                            قصة الفيلم
+                        </h4>
+                        <p id="modal-story" class="text-gray-300 leading-loose">
+                            ستظهر هنا قصة الفيلم أو المسلسل بعد اختيار العمل.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                                                      </html>
