@@ -1,15 +1,14 @@
-const TMDB_API_KEY = "YOUR_KEY_HERE";
-
-const TMDB_BASE_URL = "https://api.themoviedb.org/3";
-const TMDB_IMG_POSTER = "https://image.tmdb.org/t/p/w500";
+const TMDB_API_KEY = CONFIG.API_KEY;
+const TMDB_BASE_URL = CONFIG.BASE_URL;
+const TMDB_IMG_POSTER = CONFIG.IMG_URL;
 const TMDB_IMG_BACKDROP = "https://image.tmdb.org/t/p/original";
-const TMDB_LANGUAGE = "ar-SA";
+const TMDB_LANGUAGE = CONFIG.LANG;
+
 
 const SERVER_URLS = {
-    1: "https://example.com/embed/server1/[MOVIE_ID]",
-    2: "https://example.com/embed/server2/[MOVIE_ID]"
+    1: "https://vidsrc.xyz/embed/movie?tmdb=[MOVIE_ID]",
+    2: "https://multembed.mov/?video_id=[MOVIE_ID]&tmdb=1"
 };
-
 const GENRES = {
     28: "أكشن",
     12: "مغامرة",
