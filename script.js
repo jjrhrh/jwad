@@ -3,7 +3,12 @@ const TMDB_BASE_URL = CONFIG.BASE_URL;
 const TMDB_IMG_POSTER = CONFIG.IMG_URL;
 const TMDB_IMG_BACKDROP = "https://image.tmdb.org/t/p/original";
 const TMDB_LANGUAGE = CONFIG.LANG;
-
+const CATEGORY_ENDPOINTS = {
+    home: { path: "/trending/movie/week", params: {} },
+    movie: { path: "/discover/movie", params: { sort_by: "popularity.desc" } },
+    tv: { path: "/discover/tv", params: { sort_by: "popularity.desc" } },
+    anime: { path: "/discover/tv", params: { sort_by: "popularity.desc", with_genres: "16", with_original_language: "ja" } }
+};
 
 const SERVER_URLS = {
     1: "https://vidsrc.xyz/embed/movie?tmdb=[MOVIE_ID]",
@@ -52,6 +57,7 @@ const state = {
     heroMovie: null,
     currentMovie: null,
     currentServer: 1,
+    currentCategory: "home",
     searchTimer: null,
     favorites: []
 };
