@@ -393,7 +393,7 @@ async function switchCategory(category) {
 }
 
 function updateCategoryNav(category) {
-    document.querySelectorAll("#category-nav .nav-link").forEach(function (link) {
+        document.querySelectorAll("#category-nav .nav-link, #mobile-category-nav .nav-link").forEach(function (link) {
         const isActive = link.dataset.category === category;
         link.classList.toggle("text-red-500", isActive);
         link.classList.toggle("hover:text-red-500", !isActive);
@@ -407,7 +407,7 @@ function bindEvents() {
         handleSearchInput();
     });
     els.mobileSearchBtn.addEventListener("click", toggleMobileSearch);
-    document.querySelectorAll("#category-nav .nav-link").forEach(function (link) {
+        document.querySelectorAll("#category-nav .nav-link, #mobile-category-nav .nav-link").forEach(function (link) {
         link.addEventListener("click", function (event) {
             event.preventDefault();
             switchCategory(link.dataset.category);
