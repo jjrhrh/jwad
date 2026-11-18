@@ -9,7 +9,12 @@ const CATEGORY_ENDPOINTS = {
     tv: { path: "/discover/tv", params: { sort_by: "popularity.desc" } },
     anime: { path: "/discover/tv", params: { sort_by: "popularity.desc", with_genres: "16", with_original_language: "ja" } }
 };
-
+const CATEGORY_TITLES = {
+    home: "الأفلام الرائجة",
+    movie: "أفلام مشهورة",
+    tv: "مسلسلات مشهورة",
+    anime: "أنمي مشهور"
+};
 const SERVER_URLS = {
     1: "https://vidsrc.xyz/embed/movie?tmdb=[MOVIE_ID]",
     2: "https://multembed.mov/?video_id=[MOVIE_ID]&tmdb=1"
@@ -397,7 +402,11 @@ function updateCategoryNav(category) {
         const isActive = link.dataset.category === category;
         link.classList.toggle("text-red-500", isActive);
         link.classList.toggle("hover:text-red-500", !isActive);
-    });
+            });
+    const sectionTitle = document.getElementById("section-title");
+    if (sectionTitle) {
+        sectionTitle.textContent = CATEGORY_TITLES[category] || CATEGORY_TITLES.home;
+    }
 }
 
 function bindEvents() {
