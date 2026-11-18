@@ -183,6 +183,33 @@ async function loadTrendingMovies() {
     }
 }
 
+async function loadCategory(category) {
+    const endpoint = CATEGORY_ENDPOINTS[category] || CATEGORY_ENDPOINTS.home;
+    state.currentCategory = category;
+    if (!hasApiKey()) {
+        state.useDemo = true;
+        state.movies = DEMO_MOVIES.slice();
+        return;
+    }
+    try {
+        const data = await fetchFromTMDB(endpoint.path, endpoint.params);
+        const isTv = endpoint.path.indexOf("/tv") !== -1;
+        const list = (data.results || []).map(function (raw) {
+            const movie = normalizeMovie(raw);
+            if (isTv) {
+                movie.year = (raw.first_air_date || "").slice(0, 4) || "----";
+            }
+            return movie;
+        });
+        if (!list.length) throw new Error("Empty results");
+        state.useDemo = false;
+        state.movies = list;
+    } catch (error) {
+        state.useDemo = true;
+        state.movies = DEMO_MOVIES.slice();
+    }
+    
+}
 function renderHero(movie) {
     if (!movie) return;
     state.heroMovie = movie;
