@@ -13,19 +13,18 @@
 </head>
 <body class="bg-black text-white font-sans antialiased min-h-screen">
 
-    <header id="navbar" class="fixed top-0 inset-x-0 z-40 bg-gradient-to-b from-black via-black/80 to-transparent">
+        <header id="navbar" class="fixed top-0 inset-x-0 z-40 bg-black/90 border-b border-red-900/30 transition-colors duration-300">
         <nav class="max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 md:px-8 py-4">
             <a href="index.html" class="flex items-center gap-2 text-2xl md:text-3xl font-black text-red-600 neon-text">
                 <i class="fa-solid fa-clapperboard"></i>
                 <span>سينما ريد</span>
             </a>
 
-            <ul class="hidden lg:flex items-center gap-8 font-semibold text-gray-300">
-                <li><a href="#home" class="nav-link text-red-500 hover:text-red-500 transition">الرئيسية</a></li>
-                <li><a href="#trending" class="nav-link hover:text-red-500 transition">أفلام</a></li>
-                <li><a href="#trending" class="nav-link hover:text-red-500 transition">مسلسلات</a></li>
-                <li><a href="#trending" class="nav-link hover:text-red-500 transition">الأكثر مشاهدة</a></li>
-                <li><a href="#trending" class="nav-link hover:text-red-500 transition">أضيف حديثاً</a></li>
+            <ul id="category-nav" class="hidden md:flex items-center gap-6 lg:gap-8 font-semibold text-gray-300">
+                <li><a href="#trending" data-category="home" class="nav-link text-red-500 transition">الرئيسية</a></li>
+                <li><a href="#trending" data-category="movie" class="nav-link hover:text-red-500 transition">أفلام</a></li>
+                <li><a href="#trending" data-category="tv" class="nav-link hover:text-red-500 transition">مسلسلات</a></li>
+                <li><a href="#trending" data-category="anime" class="nav-link hover:text-red-500 transition">أنمي</a></li>
             </ul>
 
             <div class="flex items-center gap-3 md:gap-4">
