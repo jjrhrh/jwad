@@ -385,6 +385,20 @@ function closeModal() {
     document.body.style.overflow = "";
     state.currentMovie = null;
 }
+async function switchCategory(category) {
+    await loadCategory(category);
+    renderHero(state.movies[0]);
+    renderGrid(state.movies.slice(1));
+    updateCategoryNav(category);
+}
+
+function updateCategoryNav(category) {
+    document.querySelectorAll("#category-nav .nav-link").forEach(function (link) {
+        const isActive = link.dataset.category === category;
+        link.classList.toggle("text-red-500", isActive);
+        link.classList.toggle("hover:text-red-500", !isActive);
+    });
+}
 
 function bindEvents() {
     els.searchInput.addEventListener("input", handleSearchInput);
@@ -393,7 +407,13 @@ function bindEvents() {
         handleSearchInput();
     });
     els.mobileSearchBtn.addEventListener("click", toggleMobileSearch);
-
+    document.querySelectorAll("#category-nav .nav-link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            switchCategory(link.dataset.category);
+        });
+    });
+    
     document.addEventListener("click", function (event) {
         if (!els.searchForm.contains(event.target) && event.target !== els.mobileSearchBtn && !els.mobileSearchBtn.contains(event.target)) {
             hideDropdown();
